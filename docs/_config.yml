@@ -1,0 +1,7 @@
+title: KissRequests
+description: A tiny, KISS-oriented Java 17+ HTTP library built on the native JDK HttpClient.
+theme: jekyll-theme-primer
+markdown: kramdown
+kramdown:
+  input: GFM
+baseurl: /kiss-requests
