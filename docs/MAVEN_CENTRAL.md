@@ -42,7 +42,7 @@ The following secrets must be configured in the GitHub repository settings befor
 gpg --full-generate-key
 # Choose RSA, 4096 bits, no expiration
 # Name: Arthur Hoch
-# Email: (your email)
+# Email: arthur.j.h96@gmail.com
 
 # Get the key ID
 gpg --list-keys --keyid-format long
