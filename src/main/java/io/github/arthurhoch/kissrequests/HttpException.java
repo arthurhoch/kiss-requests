@@ -105,7 +105,7 @@ public class HttpException extends RuntimeException {
      * @return root cause, or {@code null} when unavailable
      */
     @Override
-    public Throwable getCause() { return rootCause; }
+    public synchronized Throwable getCause() { return rootCause; }
 
     /**
      * Returns the root cause.
