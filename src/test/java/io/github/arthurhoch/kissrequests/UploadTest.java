@@ -7,12 +7,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UploadTest {
     private static HttpServer server;
     private static String baseUrl;
+    private static final Random RANDOM = new Random(42);
     private Http http;
 
     @BeforeAll
@@ -37,7 +39,7 @@ class UploadTest {
         Path tempFile = Files.createTempFile("upload-test", ".bin");
         try {
             byte[] data = new byte[256];
-            new java.util.Random(42).nextBytes(data);
+            RANDOM.nextBytes(data);
             Files.write(tempFile, data);
 
             HttpResult result = http.upload("POST", baseUrl + "/echo",
