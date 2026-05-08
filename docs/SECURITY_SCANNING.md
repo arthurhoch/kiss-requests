@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Security Scanning
 
 ## Overview

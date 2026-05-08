@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # API Reference
 
 Package: `io.github.arthurhoch.kissrequests`

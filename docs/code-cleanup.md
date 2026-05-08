@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Safe Code Cleanup
 
 KissRequests is a small Java 17 HTTP client library with a published public API. Cleanup work must preserve the request execution model and avoid accidental API removal.

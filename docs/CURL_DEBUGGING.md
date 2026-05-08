@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Curl Debugging
 
 **Status: Implemented.**

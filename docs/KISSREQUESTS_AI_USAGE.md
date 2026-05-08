@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # KissRequests AI Usage Guide
 
 ## What This File Is

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Implementation Plan
 
 This document provides the step-by-step implementation plan for KissRequests.

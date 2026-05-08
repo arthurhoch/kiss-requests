@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Error Handling
 
 KissRequests throws a single exception type for all execution failures: `HttpException`.

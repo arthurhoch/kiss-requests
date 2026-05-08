@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # File Upload, Download, Stream, and Multipart
 
 ## File Upload

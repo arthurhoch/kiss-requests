@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Review Checklist
 
 Use this checklist before asking an AI agent to implement, harden, or release code.

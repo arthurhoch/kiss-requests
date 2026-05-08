@@ -1,7 +1,15 @@
 title: KissRequests
 description: Tiny zero-dependency Java 17+ HTTP client library built on native java.net.http.HttpClient.
-theme: jekyll-theme-primer
+url: "https://arthurhoch.github.io"
+baseurl: "/kiss-requests"
+repo_url: "https://github.com/arthurhoch/kiss-requests"
+maven_url: "https://central.sonatype.com/artifact/io.github.arthurhoch/kiss-requests"
 markdown: kramdown
 kramdown:
   input: GFM
-baseurl: /kiss-requests
+  hard_wrap: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

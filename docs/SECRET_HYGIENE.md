@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Secret Hygiene
 
 ## Rules

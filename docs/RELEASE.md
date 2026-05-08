@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Release Process
 
 ## Semantic Versioning

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # KissRequests — Product Specification
 
 **Status: Implemented / v0.1.0**

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Maven Central Publishing
 
 **Status: Version `0.1.0` is published on Maven Central.** Future publishing still requires Central Portal credentials, GPG signing setup, and GitHub secrets.

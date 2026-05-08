@@ -1,88 +1,91 @@
-# KissRequests Documentation
+---
+layout: default
+title: KissRequests
+---
 
-Tiny zero-dependency Java 17+ HTTP client library built on native `java.net.http.HttpClient`.
+<section class="hero">
+  <div>
+    <p class="eyebrow">KISS Java Libraries</p>
+    <h1>KissRequests</h1>
+    <p class="lead">Tiny zero-dependency Java 17+ HTTP client library built on native <code>java.net.http.HttpClient</code>, with prepared calls, curl rendering, retries, and rich error reports.</p>
+    <div class="meta-row">
+      <span class="tag">Latest stable: 0.1.0</span>
+      <span class="tag">Java 17+</span>
+      <span class="tag">Apache-2.0</span>
+    </div>
+    <div class="actions">
+      <a class="button" href="GETTING_STARTED.html">Getting Started</a>
+      <a class="button secondary" href="API.html">API Reference</a>
+      <a class="button secondary" href="https://github.com/arthurhoch/kiss-requests">GitHub</a>
+    </div>
+  </div>
+  <div class="panel">
+    <p class="panel-title">Maven</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;io.github.arthurhoch&lt;/groupId&gt;
+  &lt;artifactId&gt;kiss-requests&lt;/artifactId&gt;
+  &lt;version&gt;0.1.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+  </div>
+</section>
 
-Part of the KISS Java Libraries family.
+<section class="section two-column">
+  <div>
+    <h2>Small Surface</h2>
+    <p>KissRequests keeps request construction, execution, debugging, and error handling explicit. It avoids REST framework abstractions while still covering common HTTP workflows.</p>
+  </div>
+  <div class="panel">
+    <p class="panel-title">Quick Example</p>
+<pre><code>Http http = Http.create();
+HttpResult result = http
+    .request(HttpMethod.GET, "https://api.example.com/users")
+    .execute();</code></pre>
+  </div>
+</section>
 
-## Install
+<section class="section">
+  <h2>KISS Principles</h2>
+  <div class="feature-grid">
+    <article class="feature">
+      <h3>Native JDK</h3>
+      <p>The production library builds on Java HttpClient and does not ship external runtime dependencies.</p>
+    </article>
+    <article class="feature">
+      <h3>Debuggable Calls</h3>
+      <p>Prepared calls can be rendered as curl, including base64-safe variants for binary bodies.</p>
+    </article>
+    <article class="feature">
+      <h3>Useful Failures</h3>
+      <p>Exceptions include method, URL, attempts, timing, status, headers, body, curl, and cause details.</p>
+    </article>
+  </div>
+</section>
 
-```xml
-<dependency>
-    <groupId>io.github.arthurhoch</groupId>
-    <artifactId>kiss-requests</artifactId>
-    <version>0.1.0</version>
-</dependency>
-```
+<section class="section">
+  <h2>Documentation</h2>
+  <div class="doc-grid">
+    <a href="GETTING_STARTED.html">Getting Started<span>Install and make the first request.</span></a>
+    <a href="API.html">API Reference<span>Public HTTP API and result types.</span></a>
+    <a href="EXAMPLES.html">Examples<span>Copyable examples for common calls.</span></a>
+    <a href="CONFIGURATION.html">Configuration<span>Timeouts, retries, concurrency, and executors.</span></a>
+    <a href="CURL_DEBUGGING.html">Curl Debugging<span>Use toCurl for reproducible diagnostics.</span></a>
+    <a href="FILE_UPLOAD_DOWNLOAD.html">Files And Streams<span>Upload, download, stream, and multipart usage.</span></a>
+    <a href="ERROR_HANDLING.html">Error Handling<span>How rich exceptions are structured.</span></a>
+    <a href="SECURITY_SCANNING.html">Security Scanning<span>CodeQL, Dependabot, Dependency Review, and OWASP.</span></a>
+    <a href="security-hardening.html">Security Hardening<span>Repository hardening and local quality commands.</span></a>
+    <a href="SECRET_HYGIENE.html">Secret Hygiene<span>Rules for credentials and curl output.</span></a>
+    <a href="code-cleanup.html">Safe Code Cleanup<span>Deletion policy and quality gates.</span></a>
+    <a href="RELEASE.html">Release<span>Release process and Maven Central flow.</span></a>
+  </div>
+</section>
 
-## Quick Example
-
-```java
-Http http = Http.create();
-HttpResult result = http.request(HttpMethod.GET, "https://api.example.com/users").execute();
-System.out.println(result.body());
-```
-
-## Core Features
-
-- Text requests with standard or custom HTTP methods.
-- Binary file upload, file download, response streaming, and multipart/form-data.
-- Prepared calls with `.execute()`, `.toCurl()`, and `.toCurlBase64()`.
-- Rich `HttpException` reports with method, URL, curl, attempts, duration, status, headers, body, and cause.
-- Configurable retry, timeout, concurrency, and optional executor.
-
-## Documentation
-
-- [Getting Started](GETTING_STARTED.md) — Installation, first request, debugging.
-- [KissRequests AI Usage Guide](KISSREQUESTS_AI_USAGE.md) — Standalone guide for AI agents using KissRequests in consumer projects.
-- [API Reference](API.md) — Public API reference.
-- [Examples](EXAMPLES.md) — Copyable code examples for every feature.
-- [Error Handling](ERROR_HANDLING.md) — How errors work and how to handle them.
-- [Curl Debugging](CURL_DEBUGGING.md) — Using `toCurl()` for debugging.
-- [File Upload / Download / Stream / Multipart](FILE_UPLOAD_DOWNLOAD.md) — Working with files and streams.
-- [Configuration](CONFIGURATION.md) — Configuring timeouts, retries, concurrency.
-
-## Project
-
-- [Product Specification](PRODUCT_SPEC.md) — Full product spec (for contributors and AI agents).
-- [Implementation Plan](IMPLEMENTATION_PLAN.md) — Step-by-step implementation roadmap.
-- [Review Checklist](REVIEW_CHECKLIST.md) — Implementation, hardening, and release review checklist.
-- [Testing Report](TESTING_REPORT.md) — Current verification results and known limits.
-- [Safe Code Cleanup](code-cleanup.md) — Coverage, quality checks, and deletion policy.
-- [Security Hardening](security-hardening.md) — CodeQL build, Dependency Review, OpenSSF Scorecard, and manual GitHub setup.
-- [Release Guide](RELEASE.md) — Release process documentation.
-- [Maven Central Publishing](MAVEN_CENTRAL.md) — Publishing guide.
-
-## Related KISS Projects
-
-These libraries are independent, zero-dependency Java 17+ projects. Use only the modules you need.
-
-| Project | Purpose |
-|---|---|
-| [kiss-json](https://github.com/arthurhoch/kiss-json) | Field-based JSON serialization and deserialization. |
-| [kiss-requests](https://github.com/arthurhoch/kiss-requests) | Simple HTTP client built on Java HttpClient. |
-| [kiss-server](https://github.com/arthurhoch/kiss-server) | Small HTTP/1.1 server for simple REST-style applications. |
-| [kiss-config](https://github.com/arthurhoch/kiss-config) | Configuration loading from properties, .env files, system properties, and environment variables. |
-| [kiss-binary](https://github.com/arthurhoch/kiss-binary) | Explicit binary IO for primitive binary formats. |
-
-## Security
-
-- [Security Policy](../SECURITY.md) — How to report vulnerabilities.
-- [Security Scanning](SECURITY_SCANNING.md) — CodeQL, Dependabot, Dependency Review, OpenSSF Scorecard, OWASP Dependency-Check.
-- [Security Hardening](security-hardening.md) — Repository hardening and local quality commands.
-- [Secret Hygiene](SECRET_HYGIENE.md) — Rules for handling secrets and credentials.
-
-## Philosophy
-
-- **KISS**: Keep It Simple, Stupid.
-- **Zero dependencies**: No external libraries required.
-- **Native JDK**: Built on `java.net.http.HttpClient`.
-- **Memorable API**: Write requests from memory.
-- **Debuggable**: Every call can be rendered as curl.
-- **Rich errors**: Exceptions contain everything you need to debug.
-
-## Links
-
-- [GitHub](https://github.com/arthurhoch/kiss-requests)
-- [Maven Central](https://central.sonatype.com/artifact/io.github.arthurhoch/kiss-requests)
-- [Changelog](https://github.com/arthurhoch/kiss-requests/blob/main/CHANGELOG.md)
-- [Security Policy](https://github.com/arthurhoch/kiss-requests/blob/main/SECURITY.md)
+<section class="section">
+  <h2>Related Projects</h2>
+  <div class="related-grid">
+    <a href="https://github.com/arthurhoch/kiss-json">kiss-json<span>Field-based JSON serialization and deserialization.</span></a>
+    <a href="https://github.com/arthurhoch/kiss-requests">kiss-requests<span>Simple HTTP client built on Java HttpClient.</span></a>
+    <a href="https://github.com/arthurhoch/kiss-server">kiss-server<span>Small HTTP/1.1 server for simple REST-style applications.</span></a>
+    <a href="https://github.com/arthurhoch/kiss-config">kiss-config<span>Configuration from properties, .env, system properties, and environment variables.</span></a>
+    <a href="https://github.com/arthurhoch/kiss-binary">kiss-binary<span>Explicit binary IO for primitive binary formats.</span></a>
+  </div>
+</section>
