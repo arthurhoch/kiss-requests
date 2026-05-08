@@ -33,9 +33,11 @@ jobs:
         uses: github/codeql-action/init@v4
         with:
           languages: java
+          build-mode: manual
+          queries: security-and-quality
 
-      - name: Build
-        run: mvn -B compile -DskipTests
+      - name: Build for CodeQL
+        run: mvn -B -DskipTests package
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
