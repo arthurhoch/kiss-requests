@@ -173,6 +173,7 @@ These libraries are independent, zero-dependency Java 17+ projects. Use only the
 - [Maven Central Publishing](docs/MAVEN_CENTRAL.md)
 - [Review Checklist](docs/REVIEW_CHECKLIST.md)
 - [Testing Report](docs/TESTING_REPORT.md)
+- [Safe Code Cleanup](docs/code-cleanup.md)
 
 ## Architecture
 
@@ -191,6 +192,9 @@ mvn -B clean verify
 
 # Run OWASP Dependency-Check (downloads vulnerability database)
 mvn -Psecurity verify
+
+# Generate coverage report
+mvn -B test jacoco:report
 ```
 
 CodeQL and Dependabot run automatically in GitHub Actions. No secrets required.
@@ -204,13 +208,22 @@ CodeQL and Dependabot run automatically in GitHub Actions. No secrets required.
 
 ```bash
 mvn -B clean verify
+mvn -B test jacoco:report
+mvn -B javadoc:javadoc
 ```
 
-Additional configured profile:
+Additional configured profiles:
 
 ```bash
+mvn -Pspotbugs verify
 mvn -Psecurity verify
 ```
+
+## Quality, Coverage, and Release Checks
+
+JaCoCo coverage is generated during `verify`. Read the HTML report at `target/site/jacoco/index.html`; use `target/site/jacoco/jacoco.xml` for Codecov or Sonar if those services are configured later. No coverage badge is shown until a real external coverage service is configured.
+
+Before deleting code, follow [Safe Code Cleanup](docs/code-cleanup.md): distinguish internal code from public API, search source/tests/docs/examples, inspect coverage, run Javadocs, and document user-visible removals in `CHANGELOG.md`. Before release, run the normal build, Javadocs, coverage generation, and any relevant optional quality/security profiles.
 
 ## License
 

@@ -15,13 +15,19 @@ Date: 2026-05-08
 
 ```bash
 mvn -B clean verify
+mvn -B test jacoco:report
 mvn -B javadoc:javadoc
+mvn -B -Pspotbugs -DskipTests verify
+mvn -B -Psecurity -Ddependency-check.skip=true -DskipTests verify
 ```
 
 Results:
 
 - `mvn -B clean verify`: passing, 86 tests, 0 failures, 0 errors.
+- `mvn -B test jacoco:report`: passing; reports generated at `target/site/jacoco/jacoco.xml` and `target/site/jacoco/index.html`.
 - `mvn -B javadoc:javadoc`: passing.
+- `mvn -B -Pspotbugs -DskipTests verify`: passing profile validation.
+- `mvn -B -Psecurity -Ddependency-check.skip=true -DskipTests verify`: passing profile validation with Dependency-Check database scanning intentionally skipped.
 
 ## Known Limits
 

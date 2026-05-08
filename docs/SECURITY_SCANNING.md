@@ -10,7 +10,7 @@ KissRequests uses free, GitHub-native and open-source tooling for security scann
 |---|---|---|
 | CodeQL | Push to main, PR to main, weekly schedule | GitHub Actions |
 | Dependabot | Weekly | GitHub (automatic PRs) |
-| CI build | Every push and PR | GitHub Actions |
+| CI build, test reports, coverage reports | Every push and PR | GitHub Actions |
 
 ## CodeQL
 
@@ -47,10 +47,31 @@ This runs the full build plus dependency vulnerability scanning. The first run d
 ### Normal Build (No Security Scan)
 
 ```bash
-mvn -B verify
+mvn -B clean verify
 ```
 
 The OWASP scan does **not** run during normal builds. It is explicitly activated via the `security` profile.
+
+## Coverage
+
+JaCoCo runs during Maven `verify`. Local coverage reports are generated at:
+
+```text
+target/site/jacoco/jacoco.xml
+target/site/jacoco/index.html
+```
+
+Use `target/site/jacoco/index.html` for review. The XML report is compatible with Codecov or Sonar if those services are configured later; they are not required for the current setup.
+
+## SpotBugs
+
+SpotBugs is available as an optional profile:
+
+```bash
+mvn -Pspotbugs verify
+```
+
+The profile generates reports without making normal CI depend on static-analysis findings.
 
 ### CI Command
 

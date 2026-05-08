@@ -39,7 +39,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run tests
-        run: mvn -B verify
+        run: mvn -B clean verify
 
       - name: Import GPG key
         run: |

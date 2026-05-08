@@ -47,6 +47,7 @@ System.out.println(result.body());
 - [Implementation Plan](IMPLEMENTATION_PLAN.md) — Step-by-step implementation roadmap.
 - [Review Checklist](REVIEW_CHECKLIST.md) — Implementation, hardening, and release review checklist.
 - [Testing Report](TESTING_REPORT.md) — Current verification results and known limits.
+- [Safe Code Cleanup](code-cleanup.md) — Coverage, quality checks, and deletion policy.
 - [Release Guide](RELEASE.md) — Release process documentation.
 - [Maven Central Publishing](MAVEN_CENTRAL.md) — Publishing guide.
 
