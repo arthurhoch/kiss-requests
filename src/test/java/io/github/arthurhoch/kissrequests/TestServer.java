@@ -23,9 +23,15 @@ public final class TestServer {
 
         server.createContext("/status/", exchange -> {
             String path = exchange.getRequestURI().getPath();
-            int code = Integer.parseInt(path.substring("/status/".length()));
-            readFully(exchange.getRequestBody());
-            sendText(exchange, code, "Status " + code);
+            String statusPart = path.substring("/status/".length());
+            try {
+                int code = Integer.parseInt(statusPart);
+                readFully(exchange.getRequestBody());
+                sendText(exchange, code, "Status " + code);
+            } catch (NumberFormatException e) {
+                readFully(exchange.getRequestBody());
+                sendText(exchange, 400, "Invalid status code");
+            }
         });
 
         server.createContext("/download", exchange -> {
