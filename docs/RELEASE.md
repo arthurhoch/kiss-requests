@@ -45,9 +45,9 @@ Steps:
 After a successful release:
 
 1. Verify the artifact on [Maven Central](https://central.sonatype.com/) (may take time).
-2. Update the version in pom.xml to the next `-SNAPSHOT`:
+2. Update the version in pom.xml to the next development `-SNAPSHOT`:
    ```xml
-   <version>0.1.1-SNAPSHOT</version>
+   <version>NEXT-SNAPSHOT</version>
    ```
 3. Commit the snapshot version bump.
 
