@@ -9,6 +9,8 @@ KissRequests uses free, GitHub-native and open-source tooling for security scann
 | Tool | Trigger | Where |
 |---|---|---|
 | CodeQL | Push to main, PR to main, weekly schedule | GitHub Actions |
+| Dependency Review | PR to main | GitHub Actions |
+| OpenSSF Scorecard | Weekly schedule, manual dispatch | GitHub Actions and code scanning |
 | Dependabot | Weekly | GitHub (automatic PRs) |
 | CI build, test reports, coverage reports | Every push and PR | GitHub Actions |
 
@@ -18,8 +20,17 @@ CodeQL is a static analysis tool by GitHub that scans Java code for security vul
 
 - **Workflow**: `.github/workflows/codeql.yml`
 - **Triggers**: push to `main`, pull request to `main`, weekly schedule (`Monday 06:00 UTC`), manual dispatch.
+- **Build command**: `mvn -B -DskipTests -Djacoco.skip=true package`.
 - **Results**: Visible in the repository's **Security → Code scanning alerts** tab.
 - **No secrets required**.
+
+## Dependency Review
+
+Dependency Review checks pull request dependency changes and fails on moderate or higher vulnerability findings. It does not require repository secrets.
+
+## OpenSSF Scorecard
+
+OpenSSF Scorecard runs on schedule and manual dispatch, then uploads SARIF to code scanning. It uses only GitHub-provided permissions.
 
 ## Dependabot
 
@@ -138,4 +149,6 @@ This requires a Snyk account and is entirely optional.
 - CodeQL analyzes Java source code but may not catch all issues.
 - OWASP Dependency-Check only scans declared dependencies — it does not detect vulnerabilities in the JDK itself.
 - Dependabot only monitors declared dependencies in `pom.xml` and GitHub Actions.
+- Dependency Review only evaluates dependency changes in pull requests.
+- OpenSSF Scorecard is a repository health signal, not a vulnerability scanner.
 - No tool detects all vulnerabilities. Use judgment.

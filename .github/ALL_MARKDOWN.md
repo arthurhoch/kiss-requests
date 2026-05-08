@@ -64,6 +64,7 @@ This file is a manual index of all markdown files in the repository. It must be 
 | `docs/REVIEW_CHECKLIST.md` | Implementation, hardening, and release review checklist. |
 | `docs/TESTING_REPORT.md` | Current verification report and known limits. |
 | `docs/SECURITY_SCANNING.md` | Security scanning documentation. CodeQL, Dependabot, OWASP Dependency-Check. |
+| `docs/security-hardening.md` | Security workflow hardening, local checks, and manual GitHub settings. |
 | `docs/SECRET_HYGIENE.md` | Rules for handling secrets, credentials, and curl output. |
 
 ## `.github/workflows/`

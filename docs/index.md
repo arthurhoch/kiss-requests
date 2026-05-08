@@ -48,6 +48,7 @@ System.out.println(result.body());
 - [Review Checklist](REVIEW_CHECKLIST.md) — Implementation, hardening, and release review checklist.
 - [Testing Report](TESTING_REPORT.md) — Current verification results and known limits.
 - [Safe Code Cleanup](code-cleanup.md) — Coverage, quality checks, and deletion policy.
+- [Security Hardening](security-hardening.md) — CodeQL build, Dependency Review, OpenSSF Scorecard, and manual GitHub setup.
 - [Release Guide](RELEASE.md) — Release process documentation.
 - [Maven Central Publishing](MAVEN_CENTRAL.md) — Publishing guide.
 
@@ -66,7 +67,8 @@ These libraries are independent, zero-dependency Java 17+ projects. Use only the
 ## Security
 
 - [Security Policy](../SECURITY.md) — How to report vulnerabilities.
-- [Security Scanning](SECURITY_SCANNING.md) — CodeQL, Dependabot, OWASP Dependency-Check.
+- [Security Scanning](SECURITY_SCANNING.md) — CodeQL, Dependabot, Dependency Review, OpenSSF Scorecard, OWASP Dependency-Check.
+- [Security Hardening](security-hardening.md) — Repository hardening and local quality commands.
 - [Secret Hygiene](SECRET_HYGIENE.md) — Rules for handling secrets and credentials.
 
 ## Philosophy

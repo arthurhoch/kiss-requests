@@ -183,6 +183,7 @@ These libraries are independent, zero-dependency Java 17+ projects. Use only the
 
 - [Security Policy](SECURITY.md)
 - [Security Scanning](docs/SECURITY_SCANNING.md)
+- [Security Hardening](docs/security-hardening.md)
 - [Secret Hygiene](docs/SECRET_HYGIENE.md)
 - [Maven Central Publishing](docs/MAVEN_CENTRAL.md)
 
@@ -197,7 +198,7 @@ mvn -Psecurity verify
 mvn -B test jacoco:report
 ```
 
-CodeQL and Dependabot run automatically in GitHub Actions. No secrets required.
+CodeQL, Dependabot, Dependency Review, and OpenSSF Scorecard run automatically in GitHub Actions. No secrets required.
 
 ## Requirements
 
