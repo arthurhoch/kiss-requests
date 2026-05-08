@@ -47,7 +47,7 @@ After a successful release:
 1. Verify the artifact on [Maven Central](https://central.sonatype.com/) (may take time).
 2. Update the version in pom.xml to the next `-SNAPSHOT`:
    ```xml
-   <version>0.2.0-SNAPSHOT</version>
+   <version>0.1.1-SNAPSHOT</version>
    ```
 3. Commit the snapshot version bump.
 
@@ -69,7 +69,7 @@ CHANGELOG.md follows [Keep a Changelog](https://keepachangelog.com/):
 
 ## First Release
 
-The first release (v0.1.0) requires:
+The first release (`v0.1.0`) is published. Future releases still require:
 
 1. Maven Central account and namespace verification.
 2. GPG key setup.

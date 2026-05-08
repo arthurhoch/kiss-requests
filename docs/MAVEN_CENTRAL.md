@@ -1,6 +1,6 @@
 # Maven Central Publishing
 
-**Status: Release configuration is present.** Publishing still requires external Central Portal setup, GPG signing setup, and GitHub secrets.
+**Status: Version `0.1.0` is published on Maven Central.** Future publishing still requires Central Portal credentials, GPG signing setup, and GitHub secrets.
 
 ## Overview
 
@@ -107,7 +107,7 @@ The `<id>central</id>` must match the `<publishingServerId>` in the `central-pub
 
 ## Dry-Run
 
-Before the first actual publish, verify locally:
+Before future publishes, verify locally:
 
 ```bash
 # Build and test
@@ -127,9 +127,7 @@ After publishing, verify:
 
 ## Current Status
 
-- [ ] Sonatype Central Portal account created.
-- [ ] Namespace `io.github.arthurhoch` verified.
-- [ ] GPG key pair generated and public key uploaded.
-- [ ] GitHub secrets configured.
-- [ ] First dry-run verified locally.
-- [ ] First release published.
+- [x] First release published: `0.1.0`.
+- [x] GitHub release created: `v0.1.0`.
+- [x] Maven Central artifact visible for `io.github.arthurhoch:kiss-requests:0.1.0`.
+- [ ] Future releases continue to require valid Central Portal credentials, GPG signing material, and repository secrets.

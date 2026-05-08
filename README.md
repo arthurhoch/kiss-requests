@@ -1,15 +1,39 @@
 # KissRequests
 
-A tiny, KISS-oriented Java 17+ HTTP library built on the native JDK `java.net.http.HttpClient`.
+Tiny zero-dependency Java 17+ HTTP client library built on native `java.net.http.HttpClient`.
 
-Zero mandatory external dependencies. No framework. No magic.
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.arthurhoch/kiss-requests.svg)](https://central.sonatype.com/artifact/io.github.arthurhoch/kiss-requests)
+[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://openjdk.org/projects/jdk/17/)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![CI](https://github.com/arthurhoch/kiss-requests/actions/workflows/ci.yml/badge.svg)](https://github.com/arthurhoch/kiss-requests/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/arthurhoch/kiss-requests/actions/workflows/codeql.yml/badge.svg)](https://github.com/arthurhoch/kiss-requests/actions/workflows/codeql.yml)
+[![Docs](https://github.com/arthurhoch/kiss-requests/actions/workflows/pages.yml/badge.svg)](https://github.com/arthurhoch/kiss-requests/actions/workflows/pages.yml)
+
+Part of the KISS Java Libraries family: small, explicit, zero-dependency Java 17+ libraries. Each project is independent. Use only the modules you need.
 
 ## Status
 
-**v0.1.0 — release ready.**  
-All core features are implemented and covered by local tests. See [CHANGELOG.md](CHANGELOG.md) for details.
+Latest stable release: `0.1.0`.
 
-## Quick Examples
+Current development version: `0.1.1-SNAPSHOT`.
+
+The `0.1.0` artifact is published on Maven Central and the `v0.1.0` GitHub release is available.
+
+## Why this exists
+
+KissRequests exists for Java projects that need a small HTTP client abstraction without bringing in Apache HttpClient, OkHttp, a REST framework, or a large DSL. It keeps the mental model simple: prepare a call, inspect it as curl when needed, execute it, and handle a rich result or exception.
+
+## Installation
+
+```xml
+<dependency>
+    <groupId>io.github.arthurhoch</groupId>
+    <artifactId>kiss-requests</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
+## Quick Start
 
 ### GET
 
@@ -77,6 +101,15 @@ Use `HttpMethod.GET`, `HttpMethod.POST`, and the other `HttpMethod` constants fo
 - The user passes method, URL, headers, and body.
 - The library prepares the request, renders it as curl, executes it, and returns a result or throws a rich exception.
 
+## Design Principles
+
+- KISS: keep HTTP calls explicit and easy to read.
+- Zero production dependencies.
+- Java 17+ standard APIs through native `HttpClient`.
+- Small public API and no framework lock-in.
+- Predictable execution: `.execute()` performs network I/O, `.toCurl()` does not.
+- Rich errors with method, URL, curl, attempts, duration, status, headers, body, and cause.
+
 ## v1 Scope
 
 - Text requests (GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS)
@@ -109,8 +142,21 @@ Use `HttpMethod.GET`, `HttpMethod.POST`, and the other `HttpMethod` constants fo
 - No Spring, Quarkus, or framework integrations
 - No dependency on Apache HttpClient, OkHttp, or similar
 
+## Related KISS Projects
+
+These libraries are independent, zero-dependency Java 17+ projects. Use only the modules you need.
+
+| Project | Purpose |
+|---|---|
+| [kiss-json](https://github.com/arthurhoch/kiss-json) | Field-based JSON serialization and deserialization. |
+| [kiss-requests](https://github.com/arthurhoch/kiss-requests) | Simple HTTP client built on Java HttpClient. |
+| [kiss-server](https://github.com/arthurhoch/kiss-server) | Small HTTP/1.1 server for simple REST-style applications. |
+| [kiss-config](https://github.com/arthurhoch/kiss-config) | Configuration loading from properties, .env files, system properties, and environment variables. |
+| [kiss-binary](https://github.com/arthurhoch/kiss-binary) | Explicit binary IO for primitive binary formats. |
+
 ## Documentation
 
+- [GitHub Pages](https://arthurhoch.github.io/kiss-requests/)
 - [CAVEMAN.md](CAVEMAN.md) — compact project summary for quick context
 - [Documentation Index](docs/index.md)
 - [KissRequests AI Usage Guide](docs/KISSREQUESTS_AI_USAGE.md) — standalone guide for AI agents using KissRequests in consumer projects
@@ -126,6 +172,7 @@ Use `HttpMethod.GET`, `HttpMethod.POST`, and the other `HttpMethod` constants fo
 - [Release Guide](docs/RELEASE.md)
 - [Maven Central Publishing](docs/MAVEN_CENTRAL.md)
 - [Review Checklist](docs/REVIEW_CHECKLIST.md)
+- [Testing Report](docs/TESTING_REPORT.md)
 
 ## Architecture
 
@@ -140,7 +187,7 @@ Use `HttpMethod.GET`, `HttpMethod.POST`, and the other `HttpMethod` constants fo
 
 ```bash
 # Normal build (fast, no security scans)
-mvn -B verify
+mvn -B clean verify
 
 # Run OWASP Dependency-Check (downloads vulnerability database)
 mvn -Psecurity verify
@@ -148,14 +195,21 @@ mvn -Psecurity verify
 
 CodeQL and Dependabot run automatically in GitHub Actions. No secrets required.
 
-## Maven Coordinates
+## Requirements
 
-```xml
-<dependency>
-    <groupId>io.github.arthurhoch</groupId>
-    <artifactId>kiss-requests</artifactId>
-    <version>0.1.0</version>
-</dependency>
+- Java 17 or newer.
+- Maven for building from source.
+
+## Build
+
+```bash
+mvn -B clean verify
+```
+
+Additional configured profile:
+
+```bash
+mvn -Psecurity verify
 ```
 
 ## License

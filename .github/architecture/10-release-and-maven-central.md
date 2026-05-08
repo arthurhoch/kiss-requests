@@ -190,7 +190,7 @@ Steps:
 
 ## Dry-Run / Review Mode
 
-Before the first actual publish:
+Before future publishes:
 
 1. Run `mvn -B verify -P release` locally to verify GPG signing and source/javadoc jar generation.
 2. Do not deploy until all secrets and metadata are confirmed.
@@ -198,10 +198,10 @@ Before the first actual publish:
 
 ## Status
 
-**Release configuration is present.** Publishing still requires external setup:
+**Version `0.1.0` is published on Maven Central.** Future publishing still requires:
 
-- [ ] Sonatype Central Portal account created.
-- [ ] Namespace `io.github.arthurhoch` verified.
-- [ ] GPG key pair generated and public key uploaded to a keyserver.
+- [ ] Valid Sonatype Central Portal credentials.
+- [ ] Verified namespace `io.github.arthurhoch`.
+- [ ] Valid GPG signing material.
 - [ ] GitHub secrets configured: `MAVEN_CENTRAL_USERNAME`, `MAVEN_CENTRAL_PASSWORD`, `GPG_PRIVATE_KEY`, `GPG_PASSPHRASE`.
-- [ ] First dry-run verified locally.
+- [ ] Local or CI verification before tagging.

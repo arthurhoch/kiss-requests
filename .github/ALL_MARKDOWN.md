@@ -2,7 +2,7 @@
 
 This file is a manual index of all markdown files in the repository. It must be updated whenever markdown files are added, removed, or renamed.
 
-**Last updated: 2026-04-29**
+**Last updated: 2026-05-08**
 
 ## Root
 
@@ -12,6 +12,8 @@ This file is a manual index of all markdown files in the repository. It must be 
 | `CAVEMAN.md` | Compact low-token project summary for AI agents and quick human onboarding. |
 | `AGENTS.md` | Primary instruction document for AI agents. Contains project rules, scope, coding/testing/docs/release rules. |
 | `CHANGELOG.md` | Tracks all notable changes. Follows Keep a Changelog format. |
+| `CODE_OF_CONDUCT.md` | Community conduct expectations. |
+| `CONTRIBUTING.md` | Contribution rules and local checks. |
 | `SECURITY.md` | Security policy. How to report vulnerabilities, supported versions, dependency policy. |
 | `LICENSE` | Apache License 2.0 full text (not markdown, but included for completeness). |
 
@@ -60,6 +62,7 @@ This file is a manual index of all markdown files in the repository. It must be 
 | `docs/MAVEN_CENTRAL.md` | Maven Central publishing guide and required secrets. |
 | `docs/IMPLEMENTATION_PLAN.md` | Step-by-step implementation plan for AI agents. |
 | `docs/REVIEW_CHECKLIST.md` | Implementation, hardening, and release review checklist. |
+| `docs/TESTING_REPORT.md` | Current verification report and known limits. |
 | `docs/SECURITY_SCANNING.md` | Security scanning documentation. CodeQL, Dependabot, OWASP Dependency-Check. |
 | `docs/SECRET_HYGIENE.md` | Rules for handling secrets, credentials, and curl output. |
 

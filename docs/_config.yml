@@ -1,5 +1,5 @@
 title: KissRequests
-description: A tiny, KISS-oriented Java 17+ HTTP library built on the native JDK HttpClient.
+description: Tiny zero-dependency Java 17+ HTTP client library built on native java.net.http.HttpClient.
 theme: jekyll-theme-primer
 markdown: kramdown
 kramdown:
