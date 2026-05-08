@@ -10,6 +10,8 @@ import java.util.Random;
 
 public final class TestServer {
 
+    private static final Random DOWNLOAD_RANDOM = new Random(42);
+
     public static HttpServer create() throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 0), 0);
 
@@ -36,7 +38,7 @@ public final class TestServer {
 
         server.createContext("/download", exchange -> {
             byte[] data = new byte[1024];
-            new Random(42).nextBytes(data);
+            DOWNLOAD_RANDOM.nextBytes(data);
             exchange.sendResponseHeaders(200, data.length);
             exchange.getResponseBody().write(data);
             exchange.getResponseBody().close();
