@@ -66,6 +66,7 @@ HttpResult result = http
   <div class="doc-grid">
     <a href="GETTING_STARTED.html">Getting Started<span>Install and make the first request.</span></a>
     <a href="API.html">API Reference<span>Public HTTP API and result types.</span></a>
+    <a href="skills/index.html">AI Skills<span>Versioned Markdown skill files for AI-assisted usage.</span></a>
     <a href="EXAMPLES.html">Examples<span>Copyable examples for common calls.</span></a>
     <a href="CONFIGURATION.html">Configuration<span>Timeouts, retries, concurrency, and executors.</span></a>
     <a href="CURL_DEBUGGING.html">Curl Debugging<span>Use toCurl for reproducible diagnostics.</span></a>

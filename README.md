@@ -155,6 +155,7 @@ These libraries are independent, zero-dependency Java 17+ projects. Use only the
 ## Documentation
 
 - [GitHub Pages](https://arthurhoch.github.io/kiss-requests/)
+- [Versioned AI Skills](docs/skills/index.md)
 - [CAVEMAN.md](CAVEMAN.md) — compact project summary for quick context
 - [Documentation Index](docs/index.md)
 - [KissRequests AI Usage Guide](docs/KISSREQUESTS_AI_USAGE.md) — standalone guide for AI agents using KissRequests in consumer projects

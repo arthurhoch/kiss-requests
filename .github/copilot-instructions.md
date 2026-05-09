@@ -82,3 +82,7 @@ Additional v1 operations: upload, download, stream, multipart.
 - No reflection-based magic.
 - Thread safety documented for singletons.
 - Clean, readable, professional code.
+
+## Versioned AI Skills
+
+Before creating a release tag, read `.github/skills-release-policy.md` and update the versioned Markdown skill artifacts under `docs/skills/`. Add a new `docs/skills/vX.Y.Z.md` file, update `docs/skills/index.md`, keep older skill files, and verify the complete public API/member index for the release.

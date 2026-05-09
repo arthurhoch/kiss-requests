@@ -75,3 +75,11 @@ No markdown files. YAML workflow files:
 - `.github/workflows/codeql.yml`
 - `.github/workflows/pages.yml`
 - `.github/workflows/release-maven-central.yml`
+
+## Versioned AI Skills
+
+| File | Purpose |
+|------|---------|
+| `.github/skills-release-policy.md` | Release policy requiring versioned AI skill files for each tag |
+| `docs/skills/index.md` | GitHub Pages index of downloadable AI skill files by version |
+| `docs/skills/v0.1.0.md` | Versioned Markdown AI skill for KissRequests release 0.1.0 |
